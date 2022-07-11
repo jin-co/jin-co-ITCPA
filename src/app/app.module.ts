@@ -33,6 +33,9 @@ import { BeforeLoginComponent } from './components/main/before-login/before-logi
 import { AfterLoginComponent } from './components/main/after-login/after-login.component';
 import { AdminMainComponent } from './components/admin/admin-main/admin-main.component';
 
+import { environment } from '../../src/environments/environment';
+
+
 @NgModule({
   declarations: [
     AppComponent,
