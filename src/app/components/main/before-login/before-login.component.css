@@ -1,0 +1,22 @@
+.image-box {
+  height: 100%;
+  width: 100%;  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  height: 50%;
+  width: 50%;
+  border: 1px solid #fff;  
+  background-color: rgba(0, 0, 0, .4);
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+}
+
+.box .box-text {
+  font-size: 2rem;
+  letter-spacing: 2px;
+  color: #fff;
+}

@@ -1,0 +1,67 @@
+<header>
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <div class="brand-logo">
+          <i class="fas fa-italic"></i>
+          <i class="fab fa-tumblr"></i>
+          &nbsp;ITCPA
+        </div>        
+      </a>
+      <button        
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <div class="nav-menu-box">
+            <li *ngFor="let i of navItems" class="nav-item">
+              <a
+                class="nav-link"
+                aria-current="page"
+                routerLink="{{ i.path }}"
+                routerLinkActive="active"
+                >{{ i.title }}
+                </a
+              >            
+              <ul *ngIf="i.subItems" class="sub-nav">
+                <li *ngFor="let j of i.subItems" class="nav-item">
+                  <a
+                    class="nav-link"
+                    aria-current="page"
+                    routerLink="{{ j.path }}"
+                    routerLinkActive="active"
+                    >{{ j.title }}</a
+                  >
+                </li>
+              </ul>            
+            </li>           
+          </div>
+          <div class="auth-container">
+            <div class="loggedUser" (click)="onAuthContainerClick()">
+              <img class="loggedUserImg" src="" alt="">
+            </div>
+            <div class="auth-tool-box show-auth-bool-box" [ngClass]="{'show-auth-bool-box': displayAuthToolbar}">
+              <div *ngIf="!isLogged" class="login">
+                <a routerLink="/login">Login</a>
+              </div>
+              <div *ngIf="!isLogged" class="signup">
+                <a routerLink="/signup">Signup</a>
+              </div>
+              <div *ngIf="isLogged" class="signup">
+                <a>Logout</a>
+              </div>
+            </div>
+          </div>          
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

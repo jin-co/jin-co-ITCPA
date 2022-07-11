@@ -1,0 +1,9 @@
+.container-fluid {
+  margin-top: var(--margin-top-container);
+  padding: 0;
+  margin-bottom: var(--margin-top-container);
+}
+
+.page-title {
+  padding: 5px 10px;
+}

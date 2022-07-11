@@ -1,0 +1,33 @@
+<div class="container">
+  <h2 class="qnaTitle">Q&A</h2>
+  <mat-card *ngIf="qnas.length <= 0">
+    <p>No questions yet</p>
+  </mat-card>
+  <mat-accordion *ngIf="qnas.length > 0">
+    <mat-expansion-panel *ngFor="let i of qnas">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ i.title }}
+        </mat-panel-title>
+        <mat-panel-description> Reply() </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>
+        {{ i.content }}
+      </p>
+      <mat-action-row>
+        <a [routerLink]="['/qna/edit', i._id]" mat-raised-button>Edit</a>
+        <button mat-raised-button (click)="onDelete(i._id)">Delete</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <mat-paginator
+    [pageSize]="pageSize"
+    [pageSizeOptions]="pageSizeOptions"
+    [length]="total"
+    (page)="onPaginatorChange($event)"
+  ></mat-paginator>
+
+  <a routerLink="/qna/create">
+    <button mat-button>Ask questions</button>
+  </a>
+</div>

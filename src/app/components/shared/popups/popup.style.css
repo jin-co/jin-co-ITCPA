@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  gap: 5px;
+}
+
+p {
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+}
+
+button {
+  width: 50%;
+  margin: 0 auto;
+}

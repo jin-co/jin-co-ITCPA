@@ -1,0 +1,12 @@
+<mat-card>
+  <form action="" (submit)="onSubmit()">
+    <div class="image-upload-box">
+      <img src="" alt="" height="100px">
+      <input type="file" style="display: none;" (change)="onImageLoad($event)" #fileLoader>
+      <button type="button" mat-raised-button (click)="fileLoader.click()">Add Image</button>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>  
+</mat-card>
+

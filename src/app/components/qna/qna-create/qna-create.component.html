@@ -1,0 +1,37 @@
+<div class="container">
+  <a href="/qna/list">
+    <button class="qnaTitle" mat-button>Back to Q&A</button>
+  </a>
+  <mat-card>
+    <form (submit)="onSubmit()" [formGroup]="form">
+      <mat-form-field>
+        <input
+          matInput
+          formControlName="title"
+          type="text"
+          placeholder="Title"
+        />
+        <mat-error *ngIf="form.get('title')?.invalid">Title Required</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <textarea
+          matInput
+          formControlName="content"
+          name=""
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="Content"
+        ></textarea>
+        <mat-error *ngIf="form.get('content')?.invalid"
+          >Content Required</mat-error
+        >
+      </mat-form-field>
+
+      <div class="btn-box">
+        <button type="submit" mat-button> {{mode}} </button>
+      </div>
+    </form>
+  </mat-card>
+</div>

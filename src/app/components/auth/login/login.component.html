@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <div class="brand-logo">
+    <a class="navbar-brand" href="#">
+      <div class="brand-logo">
+        <i class="fas fa-italic"></i>
+        <i class="fab fa-tumblr"></i>
+        &nbsp;<span>ITCPA</span>
+      </div>
+    </a>
+  </div> 
+
+  <mat-card>
+    <form #form="ngForm" (submit)="onSubmit(form)">
+      <mat-form-field>
+        <input
+          placeholder="email"
+          matInput
+          type="email"
+          required
+          name="email"
+          #email="ngModel"
+          ngModel
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          placeholder="password"
+          matInput
+          type="password"
+          required
+          name="password"
+          #password="ngModel"
+          ngModel
+        />
+      </mat-form-field>
+      <button mat-raised-button>Login</button>
+      <small>Not registered yet? <a routerLink="/signup">Register</a></small>
+    </form>
+  </mat-card>
+</div>

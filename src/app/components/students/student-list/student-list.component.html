@@ -1,0 +1,46 @@
+<div class="card-container">
+  <div class="card" *ngFor="let i of studentList; let idx = index">
+    <div class="img">
+      <p class="first-initial"> {{ i.studentFirstName.substring(0,1).toUpperCase() }} </p>
+      <p class="last-initial">  {{ i.studentLastName.substring(0,1).toUpperCase() }} </p>
+    </div>
+    <div class="text-box">
+      <h3 class="full-name">
+        {{ i.studentFirstName }} {{ i.studentLastName }}
+      </h3>
+      <div class="text-row">
+        <p>Program: CPA</p>
+      </div>
+    </div>
+    <div class="menu-box">
+      <button
+        class="btn btn-status-menu-toggle"
+        (click)="onBtnStatusClick(idx, i.studentId, $event)"
+      >
+        <i class="fas fa-caret-square-down"></i>
+      </button>
+      <div
+        class="menu-tool-box"
+        [ngClass]="{
+          'show-tool-box': studentList[clicked] === i && showToolBox
+        }"
+      >
+        <button class="btn">
+          <a href="mailto: {{ i.studentEmail }}" title="Send an email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </button>
+
+        <button class="btn" (click)="onBtnSendClick('Would like to send a request?')">
+          <a title="Send a request">
+            <i class="fas fa-user-plus"></i>
+          </a>
+        </button>
+      </div>
+    </div>
+
+    <div class="unavailable" [ngClass]="{ 'show-status': i.hasTeam }">
+      Unavailable
+    </div>
+  </div>
+</div>

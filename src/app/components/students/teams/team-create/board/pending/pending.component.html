@@ -1,0 +1,10 @@
+<div class="pending-box">
+  <h2>
+    pending
+  </h2>
+  <div *ngFor="let i of requests" class="pending-item">
+    <h4 class="name"> {{ i.senderId }} </h4>
+    <small class="date-sent">Date sent: {{i.sentDate}}</small>
+    <button class="btn btn-cancel-request" (click)="onCancelClick(i.teamRequestId)">Cancel</button>
+  </div>
+</div>
