@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatStepperModule } from '@angular/material/stepper';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   exports: [
@@ -22,6 +23,7 @@ import { MatStepperModule } from '@angular/material/stepper';
     MatDialogModule,
     MatSidenavModule,
     MatStepperModule,
+    MatSelectModule
   ],
 })
 export class AngularMaterialModule {}

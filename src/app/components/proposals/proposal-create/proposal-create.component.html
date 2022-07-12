@@ -1,1 +1,132 @@
-<p>proposal-create works!</p>
+<div class="container-fluid">
+  <div class="text-box">
+    <h1>New Proposal</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo est officiis
+      laudantium magni! Accusamus, illum fugiat aliquam dignissimos maiores
+      error!
+    </p>
+  </div>
+  <mat-stepper #stepper>
+    <mat-step [stepControl]="firstFormGroup" errorMessage="Name is required.">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Contact Infomation</ng-template>
+        <div class="form-group">
+          <mat-form-field appearance="fill">
+            <mat-label>Company Name</mat-label>
+            <input
+              type="text"
+              matInput
+              placeholder="Last name, First name"
+              formControlName="companyName"
+            />
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input
+              type="email"
+              matInput
+              placeholder="Last name, First name"
+              formControlName="email"
+            />
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Phone</mat-label>
+            <input
+              type="text"
+              matInput
+              placeholder="Last name, First name"
+              formControlName="phone"
+            />
+          </mat-form-field>
+        </div>
+
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step
+      [stepControl]="secondFormGroup"
+      errorMessage="Address is required."
+    >
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Project Details</ng-template>
+        <div class="form-group">
+          <mat-form-field appearance="fill">
+            <mat-label>Title</mat-label>
+            <input
+              matInput
+              placeholder="Title"
+              formControlName="projectTitle"
+            />
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Description</mat-label>
+            <textarea
+              matInput
+              placeholder="Description"
+              formControlName="projectDescription"
+            ></textarea>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Target Program</mat-label>
+            <mat-select [formControl]="toppings" multiple>
+              <mat-select-trigger>
+                {{toppings.value?.[0] || ''}}
+                <span
+                  *ngIf="(toppings.value?.length || 0) > 1"
+                  class="example-additional-selection"
+                >
+                  (+{{ (toppings.value?.length || 0) - 1 }}
+                  {{ toppings.value?.length === 2 ? "other" : "others" }})
+                </span>
+              </mat-select-trigger>
+              <mat-option *ngFor="let p of programs" [value]="p">{{
+                p
+              }}</mat-option>
+              <!-- todo add form control name to options -->
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Attachments</ng-template>
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Contact Infomation</ng-template>
+        <div class="form-group">
+          <mat-form-field appearance="fill">
+            <mat-label>Company Name</mat-label>
+            <input
+              type="text"
+              matInput
+              placeholder="Last name, First name"
+              formControlName="companyName"
+            />
+          </mat-form-field>
+        </div>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</div>
