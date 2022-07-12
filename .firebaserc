@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "itcpa-2a61f",
+    "itcpa": "itcpa-2a61f"
+  },
+  "targets": {
+    "itcpa-2a61f": {
+      "hosting": {
+        "ssibal": [
+          "itcpa-2a61f"
+        ]
+      }
+    }
+  }
+}

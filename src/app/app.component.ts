@@ -10,7 +10,7 @@ import { SpinnerService } from './services/spinner';
 export class AppComponent {
   title = 'ITCPA';
   hideHeader: boolean = false;
-  isLoading:boolean = false;
+  isLoading:boolean = false;   
 
   constructor(private router: Router, private spinnerService: SpinnerService) {}
 

@@ -32,9 +32,13 @@ import { MainComponent } from './components/main/main.component';
 import { BeforeLoginComponent } from './components/main/before-login/before-login.component';
 import { AfterLoginComponent } from './components/main/after-login/after-login.component';
 import { AdminMainComponent } from './components/admin/admin-main/admin-main.component';
-
-import { environment } from '../../src/environments/environment';
-
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { AngularFireModule } from '@angular/fire/compat'
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { provideMessaging,getMessaging } from '@angular/fire/messaging';
 
 @NgModule({
   declarations: [
@@ -63,7 +67,6 @@ import { environment } from '../../src/environments/environment';
     BeforeLoginComponent,
     AfterLoginComponent,
     AdminMainComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -73,10 +76,15 @@ import { environment } from '../../src/environments/environment';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    // provideAuth(() => getAuth()),
+    // provideDatabase(() => getDatabase()),
+    // provideFirestore(() => getFirestore()),
+    // provideMessaging(() => getMessaging()),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
