@@ -1,11 +1,9 @@
-import { NgModule } from "@angular/core";
+import { NgModule } from '@angular/core';
 // import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { AngularFireModule } from '@angular/fire/compat'
-// import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-// import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-// import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-// import { AngularFireMessagingModule } from '@angular/fire/compat/messaging';
+import { AngularFireModule } from '@angular/fire/compat';
+
+// import { FirebaseApp } from '@angular/fire/compat/firebase.app';
 // import { provideAuth,getAuth } from '@angular/fire/auth';
 // import { provideDatabase,getDatabase } from '@angular/fire/database';
 // import { provideFirestore,getFirestore } from '@angular/fire/firestore';
@@ -20,12 +18,11 @@ import { AngularFireModule } from '@angular/fire/compat'
     // provideMessaging(() => getMessaging()),
   ],
   exports: [
-    AngularFireModule,
+    AngularFireModule,    
     // AngularFireAuthModule,
     // AngularFireDatabaseModule,
     // AngularFirestoreModule,
     // AngularFireMessagingModule
-  ]
+  ],
 })
-
 export class FirebaseModule {}
