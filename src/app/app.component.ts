@@ -27,7 +27,7 @@ export class AppComponent {
     });
 
     this.spinnerService.getIsLoading().subscribe(result => {
-      this.isLoading = result
+      this.isLoading = result      
     })    
   }
 }
