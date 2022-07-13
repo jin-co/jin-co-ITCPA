@@ -101,18 +101,11 @@
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Attachments</ng-template>
-      <form [formGroup]="firstFormGroup">
+      <form [formGroup]="thirdFormGroup">
         <ng-template matStepLabel>Contact Infomation</ng-template>
         <div class="form-group">
-          <mat-form-field appearance="fill">
-            <mat-label>Company Name</mat-label>
-            <input
-              type="text"
-              matInput
-              placeholder="Last name, First name"
-              formControlName="companyName"
-            />
-          </mat-form-field>
+          <mat-label>Company Name</mat-label>
+          <input type="file" formControlName="file" />
         </div>
         <div>
           <button mat-button matStepperPrevious>Back</button>
@@ -121,8 +114,23 @@
       </form>
     </mat-step>
     <mat-step>
-      <ng-template matStepLabel>Done</ng-template>
+      <ng-template matStepLabel>Completed</ng-template>
       <p>You are now done.</p>
+      <mat-card>
+        <h2>Summary:</h2>
+        <ul>Contact Information
+          <li></li>
+        </ul>
+        <mat-divider></mat-divider>
+        <ul>Project Details
+          <li></li>
+        </ul>
+        <mat-divider></mat-divider>
+        <ul>Attachments
+          <li></li>
+        </ul>        
+      </mat-card>
+
       <div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button (click)="stepper.reset()">Reset</button>
