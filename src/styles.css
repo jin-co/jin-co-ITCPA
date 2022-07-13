@@ -116,6 +116,10 @@ a {
   .sub-nav li {
     padding-left: 10px;
   }
+
+  .toggler-btn {  
+    transform: scale(1) !important;
+  }
 }
 
 @media all and (max-width:730px) {

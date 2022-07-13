@@ -29,7 +29,7 @@
 
 .navbar-nav li:hover > ul {
   /* nav hover effect: displays sub nav */
-  display: block;  
+  display: block;
   z-index: 3;
 }
 /* navigation styles */
@@ -49,6 +49,34 @@
   border-left: 3px solid red;
 }
 /* sub navigation styles */
+
+/* nav bar toggler button */
+.toggler-btn {  
+  position: relative;  
+  border: solid 1px #000;
+  transform: scale(0);
+}
+
+.toggler-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: .4s ease;
+}
+
+.show-toggler {
+  transform: scale(1);
+}
+
+.hide-toggler {
+  transform: scale(0);
+}
+
+/* .navbar-collapse.show {
+  height: 100%;
+} */
+/* nav bar toggler button */
 
 /* auth styles */
 .auth-container {
@@ -95,6 +123,13 @@
   transform-origin: top;
   transform: rotate(-90deg) scale(0);
   transition: 0.4s ease;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, .6);  
+  border-radius: 10px 10px 0 0 ;
+}
+
+.auth-tool-box a {
+  color: #efefef;
 }
 
 .show-auth-bool-box {

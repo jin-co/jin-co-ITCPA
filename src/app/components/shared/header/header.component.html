@@ -6,9 +6,9 @@
           <i class="fas fa-italic"></i>
           <i class="fab fa-tumblr"></i>
           &nbsp;ITCPA
-        </div>        
+        </div>
       </a>
-      <button        
+      <!-- <button
         class="navbar-toggler"
         type="button"
         data-bs-toggle="collapse"
@@ -16,10 +16,17 @@
         aria-controls="navbarSupportedContent"
         aria-expanded="false"
         aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
+      > -->
+      <button class="toggler-btn" type="button" (click)="onToggleClick()">
+        <i class="fas fa-times toggler-icon" [ngClass]="{'hide-toggler': toggleClicked}"></i>
+        <i class="fas fa-bars toggler-icon" [ngClass]="{'hide-toggler': !toggleClicked}"></i>
+
+        <!-- <span class="navbar-toggler-icon">
+          <i class="fas fa-times"></i>
+          <i class="fas fa-bars"></i>
+        </span> -->
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse" [ngClass]="{show: toggleClicked}" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <div class="nav-menu-box">
             <li *ngFor="let i of navItems" class="nav-item">
@@ -29,8 +36,7 @@
                 routerLink="{{ i.path }}"
                 routerLinkActive="active"
                 >{{ i.title }}
-                </a
-              >            
+              </a>
               <ul *ngIf="i.subItems" class="sub-nav">
                 <li *ngFor="let j of i.subItems" class="nav-item">
                   <a
@@ -41,14 +47,17 @@
                     >{{ j.title }}</a
                   >
                 </li>
-              </ul>            
-            </li>           
+              </ul>
+            </li>
           </div>
           <div class="auth-container">
             <div class="loggedUser" (click)="onAuthContainerClick()">
-              <img class="loggedUserImg" src="" alt="">
+              <img class="loggedUserImg" src="" alt="" />
             </div>
-            <div class="auth-tool-box show-auth-bool-box" [ngClass]="{'show-auth-bool-box': displayAuthToolbar}">
+            <div
+              class="auth-tool-box show-auth-bool-box"
+              [ngClass]="{ 'show-auth-bool-box': displayAuthToolbar }"
+            >
               <div *ngIf="!isLogged" class="login">
                 <a routerLink="/login">Login</a>
               </div>
@@ -59,7 +68,7 @@
                 <a>Logout</a>
               </div>
             </div>
-          </div>          
+          </div>
         </ul>
       </div>
     </div>
