@@ -30,6 +30,7 @@
 .navbar-nav li:hover > ul {
   /* nav hover effect: displays sub nav */
   display: block;  
+  z-index: 3;
 }
 /* navigation styles */
 
