@@ -7,6 +7,19 @@
   padding: 20px;  
 }
 
+.pending-box h2 {
+  background-color: #377D71;
+  min-width: 156px;
+  width: 20%;
+  border-radius: 5px;
+  text-align: center;
+  color: #fff;
+  letter-spacing: 1px;
+  position: relative;
+  left: -10px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, .3);
+}
+
 .pending-item {
   height: 50px;
   width: 100%;  

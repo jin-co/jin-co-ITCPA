@@ -128,7 +128,28 @@ a {
   }
 
   .items {
-    width: 180px !important;    
+    width: 100% !important;       
+    border-bottom: 2px solid #fff; 
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: space-around !important;
+    padding: 10px 0;    
+  }
+
+  .items .item-title {
+    width: 50% !important;    
+    margin: 0 5px;
+  }
+
+  .items p {
+    width: 50% !important;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .items:last-child {
+    width: 100% !important;       
+    border-bottom: none; 
   }
 
   .line-vertical {

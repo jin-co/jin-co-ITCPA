@@ -1,9 +1,14 @@
 .card {
   min-height: 250px;
   width: 100%;
-  margin-bottom: 100px;  
+  margin-bottom: 100px;
   display: flex;
   flex-direction: column;
-  gap: 20px;  
-  background-color: #66BFBF;
+  gap: 20px;
+  background: linear-gradient(
+    90deg,                
+    rgba(235, 71, 71, 1) 2%,
+    rgb(240, 232, 227) 2%,
+    rgb(241, 240, 240) 100%    
+  );
 }

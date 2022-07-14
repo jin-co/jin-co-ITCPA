@@ -19,9 +19,13 @@
 }
 
 .items .item-title {
-  width: 100%;
+  width: 90%;
+  min-width: 170px;
   word-wrap: break-word;  
   text-align: center;
   letter-spacing: 1px;    
+  background-color: #937DC2;
+  border-radius: 3px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, .3);
 }
 
