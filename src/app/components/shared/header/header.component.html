@@ -17,9 +17,9 @@
         aria-expanded="false"
         aria-label="Toggle navigation"
       > -->
-      <button class="toggler-btn" type="button" (click)="onToggleClick()">
-        <i class="fas fa-times toggler-icon" [ngClass]="{'hide-toggler': toggleClicked}"></i>
-        <i class="fas fa-bars toggler-icon" [ngClass]="{'hide-toggler': !toggleClicked}"></i>
+      <button class="toggler-btn" type="button" (click)="onToggleClick()">        
+        <i class="fas fa-times toggler-icon" [ngClass]="{'hide-toggler': !toggleClicked}"></i>
+        <i class="fas fa-bars toggler-icon" [ngClass]="{'hide-toggler': toggleClicked}"></i>
 
         <!-- <span class="navbar-toggler-icon">
           <i class="fas fa-times"></i>

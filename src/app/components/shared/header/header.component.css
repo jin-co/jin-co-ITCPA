@@ -61,16 +61,12 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
   transition: .4s ease;
 }
 
-.show-toggler {
-  transform: scale(1);
-}
-
 .hide-toggler {
-  transform: scale(0);
+  transform: translate(-50%, -50%) scale(0);
 }
 
 /* .navbar-collapse.show {
