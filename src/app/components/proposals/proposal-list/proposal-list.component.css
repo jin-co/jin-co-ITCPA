@@ -1,0 +1,9 @@
+.container-fluid {    
+  padding-top: var(--margin-top-container);
+  margin-bottom: var(--margin-top-container);
+  background: url(../../../../assets/images/backgrounds/bg5.jpg) center bottom/cover no-repeat;
+}
+
+.page-title {
+  padding: 5px 10px;
+}

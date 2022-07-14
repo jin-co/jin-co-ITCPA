@@ -1,8 +1,7 @@
-.container-fluid {
-    
+.container-fluid {    
   padding-top: var(--margin-top-container);
   margin-bottom: var(--margin-top-container);
-  background: url(../../../../../assets/images/backgrounds/header4.jpg) center center/cover;
+  background: url(../../../../../assets/images/backgrounds/bg3.jpg) center center/cover;
 }
 
 .page-title {
