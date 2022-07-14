@@ -16,8 +16,7 @@ export class QnaService {
     this.http
       .get<{ qnas: Qna[]; count: number }>(this.baseURL + paginatorParams)
       .subscribe((data) => {
-        this.qnas = data.qnas;
-        console.log(data);
+        this.qnas = data.qnas;        
         this.qnaUpdate.next({ qnas: [...this.qnas], count: data.count });
       });
   }

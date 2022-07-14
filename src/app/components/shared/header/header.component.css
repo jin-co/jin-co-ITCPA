@@ -55,6 +55,7 @@
   position: relative;  
   border: solid 1px #000;
   transform: scale(0);
+  margin-right: 10px;
 }
 
 .toggler-icon {

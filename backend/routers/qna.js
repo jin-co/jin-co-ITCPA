@@ -2,8 +2,7 @@ const express = require("express");
 const router = express();
 const Qna = require("../models/qna");
 
-router.get("", (req, res, next) => {
-  console.log(req.query);
+router.get("", (req, res, next) => {  
   const pageSize = +req.query.pageSize;
   const currentPage = +req.query.currentPage;
   const qnaQuary = Qna.find();
