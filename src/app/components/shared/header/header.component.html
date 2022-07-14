@@ -17,20 +17,37 @@
         aria-expanded="false"
         aria-label="Toggle navigation"
       > -->
-      <button class="toggler-btn" type="button" (click)="onToggleClick()">        
-        <i class="fas fa-times toggler-icon" [ngClass]="{'hide-toggler': !toggleClicked}"></i>
-        <i class="fas fa-bars toggler-icon" [ngClass]="{'hide-toggler': toggleClicked}"></i>
+      <button
+        class="toggler-btn"
+        type="button"
+        (click)="onToggleClick()"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+      >
+        <i
+          class="fas fa-times toggler-icon"
+          [ngClass]="{ 'hide-toggler': !toggleClicked }"
+        ></i>
+        <i
+          class="fas fa-bars toggler-icon"
+          [ngClass]="{ 'hide-toggler': toggleClicked }"
+        ></i>
 
         <!-- <span class="navbar-toggler-icon">
           <i class="fas fa-times"></i>
           <i class="fas fa-bars"></i>
         </span> -->
       </button>
-      <div class="collapse navbar-collapse" [ngClass]="{show: toggleClicked}" id="navbarSupportedContent">
+      <div
+        class="collapse navbar-collapse"
+        [ngClass]="{ show: toggleClicked }"
+        id="navbarSupportedContent"
+      >
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <div class="nav-menu-box">
             <li *ngFor="let i of navItems" class="nav-item">
               <a
+                (click)="onToggleClick()"
                 class="nav-link"
                 aria-current="page"
                 routerLink="{{ i.path }}"
@@ -40,6 +57,7 @@
               <ul *ngIf="i.subItems" class="sub-nav">
                 <li *ngFor="let j of i.subItems" class="nav-item">
                   <a
+                    (click)="onToggleClick()"
                     class="nav-link"
                     aria-current="page"
                     routerLink="{{ j.path }}"

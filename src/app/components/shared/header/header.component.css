@@ -69,9 +69,18 @@
   transform: translate(-50%, -50%) scale(0);
 }
 
-/* .navbar-collapse.show {
-  height: 100%;
-} */
+/* test */
+.navbar-collapse {
+  
+  
+}
+
+.navbar-collapse.show {
+  
+  
+}
+
+/* test */
 /* nav bar toggler button */
 
 /* auth styles */
