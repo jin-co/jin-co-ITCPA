@@ -17,8 +17,8 @@
             <input
               type="text"
               matInput
-              placeholder="Last name, First name"
-              formControlName="companyName"
+              placeholder="e.g. Com"
+              formControlName="name"
             />
           </mat-form-field>
 
@@ -27,7 +27,7 @@
             <input
               type="email"
               matInput
-              placeholder="Last name, First name"
+              placeholder="com@com.com"
               formControlName="email"
             />
           </mat-form-field>
@@ -37,22 +37,24 @@
             <input
               type="text"
               matInput
-              placeholder="Last name, First name"
+              placeholder="000-000-0000 or (000)000-0000"
               formControlName="phone"
             />
           </mat-form-field>
         </div>
 
         <div>
-          <button mat-button matStepperNext (click)="addContactInfo()">Next</button>
+          <button mat-button matStepperNext (click)="addContactInfo()">
+            Next
+          </button>
         </div>
       </form>
     </mat-step>
     <mat-step
-      [stepControl]="secondFormGroup"
+      [stepControl]="projectDetailGroup"
       errorMessage="Address is required."
     >
-      <form [formGroup]="secondFormGroup">
+      <form [formGroup]="projectDetailGroup">
         <ng-template matStepLabel>Project Details</ng-template>
         <div class="form-group">
           <mat-form-field appearance="fill">
@@ -60,7 +62,7 @@
             <input
               matInput
               placeholder="Title"
-              formControlName="projectTitle"
+              formControlName="title"
             />
           </mat-form-field>
 
@@ -69,7 +71,7 @@
             <textarea
               matInput
               placeholder="Description"
-              formControlName="projectDescription"
+              formControlName="description"
             ></textarea>
           </mat-form-field>
 
@@ -88,14 +90,13 @@
               </mat-select-trigger>
               <mat-option *ngFor="let p of programs" [value]="p">{{
                 p
-              }}</mat-option>
-              <!-- todo add form control name to options -->
+              }}</mat-option>              
             </mat-select>
           </mat-form-field>
         </div>
         <div>
           <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
+          <button mat-button matStepperNext (click)="addProjectDetail()">Next</button>
         </div>
       </form>
     </mat-step>
@@ -118,17 +119,20 @@
       <p>You are now done.</p>
       <mat-card>
         <h2>Summary:</h2>
-        <ul>Contact Information
+        <ul>
+          Contact Information
           <li></li>
         </ul>
         <mat-divider></mat-divider>
-        <ul>Project Details
+        <ul>
+          Project Details
           <li></li>
         </ul>
         <mat-divider></mat-divider>
-        <ul>Attachments
+        <ul>
+          Attachments
           <li></li>
-        </ul>        
+        </ul>
       </mat-card>
 
       <div>

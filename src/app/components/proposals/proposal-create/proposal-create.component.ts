@@ -6,6 +6,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Project } from 'src/app/models/project/project';
 
 @Component({
   selector: 'app-proposal-create',
@@ -20,7 +21,7 @@ import {
 })
 export class ProposalCreateComponent implements OnInit {
   contactInfoGroup!: FormGroup;
-  secondFormGroup!: FormGroup;
+  projectDetailGroup!: FormGroup;
   thirdFormGroup!: FormGroup;
   toppings = new FormControl('');
 
@@ -30,22 +31,42 @@ export class ProposalCreateComponent implements OnInit {
 
   ngOnInit(): void {
     this.contactInfoGroup = this._formBuilder.group({
-      companyName: ['', Validators.required],
+      name: ['', Validators.required],
       email: ['', Validators.required],
       phone: ['', Validators.required],
     });
-    this.secondFormGroup = this._formBuilder.group({
-      projectTitle: ['', Validators.required],
-      projectDescription: ['', Validators.required],
+    this.projectDetailGroup = this._formBuilder.group({
+      title: ['', Validators.required],
+      description: ['', Validators.required],
+      targetProgram: [[], Validators.required],
     });
     this.thirdFormGroup = this._formBuilder.group({
       file: ['', Validators.required],
     });
   }
 
+  newContactInfo!: Project;
   addContactInfo() {
-    if(this.contactInfoGroup.valid) {
-      
-    }    
+    if (this.contactInfoGroup.valid) {
+      this.newContactInfo = {
+        companyName: this.contactInfoGroup.value.name,
+        companyEmail: this.contactInfoGroup.value.email,
+        companyPhone: this.contactInfoGroup.value.phone,
+      };
+    }
+  }
+
+  newProjectDetail!: Project
+  addProjectDetail() {
+    if (this.projectDetailGroup.valid) {
+      this.newProjectDetail = {
+        projectName: this.contactInfoGroup.value.title,
+        projectDescription: this.contactInfoGroup.value.description,
+        targetProgram: this.contactInfoGroup.value.phone,
+      };      
+
+      console.log('added: ', this.newContactInfo)
+      console.log('project: ', this.projectDetailGroup)
+    }
   }
 }
