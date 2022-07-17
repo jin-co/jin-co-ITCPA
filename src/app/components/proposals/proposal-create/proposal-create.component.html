@@ -8,9 +8,9 @@
     </p>
   </div>
   <mat-stepper #stepper>
-    <mat-step [stepControl]="firstFormGroup" errorMessage="Name is required.">
-      <form [formGroup]="firstFormGroup">
-        <ng-template matStepLabel>Contact Infomation</ng-template>
+    <mat-step [stepControl]="contactInfoGroup" errorMessage="Name is required.">
+      <form [formGroup]="contactInfoGroup">
+        <ng-template matStepLabel>Contact Information</ng-template>
         <div class="form-group">
           <mat-form-field appearance="fill">
             <mat-label>Company Name</mat-label>
@@ -44,7 +44,7 @@
         </div>
 
         <div>
-          <button mat-button matStepperNext>Next</button>
+          <button mat-button matStepperNext (click)="addContactInfo()">Next</button>
         </div>
       </form>
     </mat-step>
