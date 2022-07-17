@@ -59,11 +59,7 @@
         <div class="form-group">
           <mat-form-field appearance="fill">
             <mat-label>Title</mat-label>
-            <input
-              matInput
-              placeholder="Title"
-              formControlName="title"
-            />
+            <input matInput placeholder="Title" formControlName="title" />
           </mat-form-field>
 
           <mat-form-field appearance="fill">
@@ -90,23 +86,34 @@
               </mat-select-trigger>
               <mat-option *ngFor="let p of programs" [value]="p">{{
                 p
-              }}</mat-option>              
+              }}</mat-option>
             </mat-select>
           </mat-form-field>
         </div>
         <div>
           <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext (click)="addProjectDetail()">Next</button>
+          <button mat-button matStepperNext (click)="addProjectDetail()">
+            Next
+          </button>
         </div>
       </form>
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Attachments</ng-template>
-      <form [formGroup]="thirdFormGroup">
-        <ng-template matStepLabel>Contact Infomation</ng-template>
+      <form [formGroup]="fileUploadGroup">
+        <ng-template matStepLabel>file upload</ng-template>
         <div class="form-group">
-          <mat-label>Company Name</mat-label>
-          <input type="file" formControlName="file" />
+          <mat-label>Choose File</mat-label>
+          <input
+            type="file"
+            formControlName="file"
+            #fileLoader
+            (change)="addFiles($event)"
+          />
+          <button mat-button type="button" (click)="fileLoader.click()">
+            Upload
+          </button>
+          <img *ngIf="preview" height="100px" [src]="preview" alt="">
         </div>
         <div>
           <button mat-button matStepperPrevious>Back</button>
