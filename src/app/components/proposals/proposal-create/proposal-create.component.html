@@ -44,9 +44,7 @@
         </div>
 
         <div>
-          <button mat-button matStepperNext (click)="addContactInfo()">
-            Next
-          </button>
+          <button mat-button matStepperNext>Next</button>
         </div>
       </form>
     </mat-step>
@@ -92,9 +90,7 @@
         </div>
         <div>
           <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext (click)="addProjectDetail()">
-            Next
-          </button>
+          <button mat-button matStepperNext>Next</button>
         </div>
       </form>
     </mat-step>
@@ -113,7 +109,7 @@
           <button mat-button type="button" (click)="fileLoader.click()">
             Upload
           </button>
-          <img *ngIf="preview" height="100px" [src]="preview" alt="">
+          <img *ngIf="preview" height="100px" [src]="preview" alt="" />
         </div>
         <div>
           <button mat-button matStepperPrevious>Back</button>
@@ -128,17 +124,26 @@
         <h2>Summary:</h2>
         <ul>
           Contact Information
-          <li></li>
+          <li>{{ contactInfoGroup?.get("name")?.value }}</li>
+          <li>{{ contactInfoGroup?.get("email")?.value }}</li>
+          <li>{{ contactInfoGroup?.get("phone")?.value }}</li>
         </ul>
         <mat-divider></mat-divider>
         <ul>
           Project Details
-          <li></li>
+          <li>{{ projectDetailGroup.get("title")?.value }}</li>
+          <li>{{ projectDetailGroup.get("description")?.value }}</li>
+          <li>
+            <small
+              *ngFor="let t of projectDetailGroup.get('targetProgram')?.value ; index as i"
+            >
+            {{ t }} {{ i}},
+            </small>
+          </li>
         </ul>
         <mat-divider></mat-divider>
         <ul>
-          Attachments
-          <li></li>
+          <li>{{ fileUploadGroup.get("file")?.value }}</li>
         </ul>
       </mat-card>
 
