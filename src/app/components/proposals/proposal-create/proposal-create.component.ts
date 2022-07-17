@@ -19,7 +19,7 @@ import {
   ],
 })
 export class ProposalCreateComponent implements OnInit {
-  firstFormGroup!: FormGroup;
+  contactInfoGroup!: FormGroup;
   secondFormGroup!: FormGroup;
   thirdFormGroup!: FormGroup;
   toppings = new FormControl('');
@@ -29,7 +29,7 @@ export class ProposalCreateComponent implements OnInit {
   constructor(private _formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
-    this.firstFormGroup = this._formBuilder.group({
+    this.contactInfoGroup = this._formBuilder.group({
       companyName: ['', Validators.required],
       email: ['', Validators.required],
       phone: ['', Validators.required],
@@ -41,5 +41,11 @@ export class ProposalCreateComponent implements OnInit {
     this.thirdFormGroup = this._formBuilder.group({
       file: ['', Validators.required],
     });
+  }
+
+  addContactInfo() {
+    if(this.contactInfoGroup.valid) {
+      
+    }    
   }
 }
