@@ -75,14 +75,13 @@ export class ProposalCreateComponent implements OnInit {
   //todo -> fix error
   addFiles(e: Event) {    
     const file = (e.target as HTMLInputElement).files?.[0];    
-    this.fileUploadGroup.patchValue({ file: file });
-    console.log(file)
-    this.fileUploadGroup.get('file')?.updateValueAndValidity();
+    this.fileUploadGroup.patchValue({ image: file });
+    this.fileUploadGroup.get('image')?.updateValueAndValidity();
     const reader = new FileReader();
     reader.onload = () => {
       this.preview = reader.result as string;
     };
 
-    reader.readAsDataURL(file as Blob);
+    reader.readAsDataURL(file as Blob);                  
   }
 }
