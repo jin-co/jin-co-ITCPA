@@ -5,6 +5,6 @@ export interface Project {
   companyPhone?: string;
   projectName?: string;
   projectDescription?: string;
-  targetProgram?: string;
+  targetProgram?: [];
   attachedFile?: string;
 }

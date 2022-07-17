@@ -60,12 +60,13 @@ export class ProposalCreateComponent implements OnInit {
   addProjectDetail() {
     if (this.projectDetailGroup.valid) {
       this.newProjectDetail = {
-        projectName: this.contactInfoGroup.value.title,
-        projectDescription: this.contactInfoGroup.value.description,
-        targetProgram: this.contactInfoGroup.value.phone,
+        projectName: this.projectDetailGroup.value.title,
+        projectDescription: this.projectDetailGroup.value.description,
+        targetProgram: this.projectDetailGroup.value.targetProgram,
       };      
 
-      console.log('added: ', this.newContactInfo)
+      console.log('added 1: ', this.newContactInfo)
+      console.log('added 2: ', this.newProjectDetail)
       console.log('project: ', this.projectDetailGroup)
     }
   }
