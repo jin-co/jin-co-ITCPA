@@ -45,32 +45,6 @@ export class ProposalCreateComponent implements OnInit {
     });
   }
 
-  newContactInfo!: Project;
-  addContactInfo() {
-    if (this.contactInfoGroup.valid) {
-      this.newContactInfo = {
-        companyName: this.contactInfoGroup.value.name,
-        companyEmail: this.contactInfoGroup.value.email,
-        companyPhone: this.contactInfoGroup.value.phone,
-      };
-    }
-  }
-
-  newProjectDetail!: Project;
-  addProjectDetail() {
-    if (this.projectDetailGroup.valid) {
-      this.newProjectDetail = {
-        projectName: this.projectDetailGroup.value.title,
-        projectDescription: this.projectDetailGroup.value.description,
-        targetProgram: this.projectDetailGroup.value.targetProgram,
-      };
-
-      console.log('added 1: ', this.newContactInfo);
-      console.log('added 2: ', this.newProjectDetail);
-      console.log('project: ', this.projectDetailGroup);
-    }
-  }
-
   preview!: string;
   //todo -> fix error
   addFiles(e: Event) {    
