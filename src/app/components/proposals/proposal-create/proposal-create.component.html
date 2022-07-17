@@ -118,26 +118,29 @@
       </form>
     </mat-step>
     <mat-step>
-      <ng-template matStepLabel>Completed</ng-template>
+      <ng-template matStepLabel>Summary</ng-template>
       <p>You are now done.</p>
       <mat-card>
         <h2>Summary:</h2>
         <ul>
-          Contact Information
+          <h3>Contact Information</h3>
           <li>{{ contactInfoGroup?.get("name")?.value }}</li>
           <li>{{ contactInfoGroup?.get("email")?.value }}</li>
           <li>{{ contactInfoGroup?.get("phone")?.value }}</li>
         </ul>
         <mat-divider></mat-divider>
         <ul>
-          Project Details
+          <h3>Project Details</h3>
           <li>{{ projectDetailGroup.get("title")?.value }}</li>
           <li>{{ projectDetailGroup.get("description")?.value }}</li>
           <li>
             <small
-              *ngFor="let t of projectDetailGroup.get('targetProgram')?.value ; index as i"
+              *ngFor="
+                let t of projectDetailGroup.get('targetProgram')?.value;
+                index as i
+              "
             >
-            {{ t }} {{ i}},
+              {{ t }} {{ i }},
             </small>
           </li>
         </ul>

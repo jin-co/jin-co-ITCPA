@@ -48,6 +48,6 @@
   width: 50%;
 }
 
-.mat-select-panel {
-  display: flex !important;
+li {
+  list-style: none;
 }
