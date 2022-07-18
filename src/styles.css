@@ -89,6 +89,15 @@ a {
   border: none;
 }
 
+/* angular style override */
+.mat-select-panel {
+  max-width: none !important;
+  display: flex !important;
+  position: absolute !important;
+  top: 35px !important;
+  left: 30px !important;
+}
+
 /* responsive styles */
 @media all and (max-width:996px) {
   .nav-menu-box {
@@ -156,12 +165,17 @@ a {
     display: none;
   }
 }
+
+@media all and (max-width: 685px) {
+  .mat-stepper-horizontal::before {
+    display: none;
+  }
+}
+
+@media all and (max-width: 475px) {
+  .mat-select-panel {    
+    flex-direction: column !important;        
+  }
+}
 /* responsive styles */
 
-/* angular style override */
-.mat-select-panel {
-  display: flex !important;
-  position: absolute !important;
-  top: 35px !important;
-  left: 30px !important;
-}

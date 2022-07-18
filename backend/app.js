@@ -9,6 +9,7 @@ const qnaRouter = require("./routers/qna");
 const studentRouter = require("./routers/students/student");
 const teamRequestRouter = require("./routers/students/team-request");
 const settingRouter = require("./routers/admin/setting");
+const projectRouter = require("./routers/project/project");
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -44,7 +45,6 @@ mongoose
   .then(() => console.log("mongodb connected"))
   .catch(() => console.log("mongodb connection failed"));
 
-
 app.use("/images", express.static(path.join("backend/images")));
 
 app.use(express.json());
@@ -52,5 +52,6 @@ app.use("/qna", qnaRouter);
 app.use("/students", studentRouter);
 app.use("/team-request", teamRequestRouter);
 app.use("/setting", settingRouter);
+app.use("/project", projectRouter);
 
 module.exports = app;

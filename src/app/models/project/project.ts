@@ -1,10 +1,12 @@
 export interface Project {
   projectId?: number;
+  clientId: number;
   companyName?: string;
   companyEmail?: string;
   companyPhone?: string;
-  projectName?: string;
+  projectTitle?: string;
   projectDescription?: string;
-  targetProgram?: [];
-  attachedFile?: string;
+  targetProgram?: string[];
+  attachedFile?: string | File;
+  approved?: boolean;
 }

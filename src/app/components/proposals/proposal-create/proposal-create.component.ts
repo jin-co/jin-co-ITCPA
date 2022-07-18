@@ -7,6 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Project } from 'src/app/models/project/project';
+import { ProjectService } from 'src/app/services/project';
 
 @Component({
   selector: 'app-proposal-create',
@@ -27,7 +28,10 @@ export class ProposalCreateComponent implements OnInit {
 
   programs: string[] = ['CP', 'CPA', 'ITCP', 'CDCD', 'All'];
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(
+    private _formBuilder: FormBuilder,
+    private projectService: ProjectService
+  ) {}
 
   ngOnInit(): void {
     this.contactInfoGroup = this._formBuilder.group({
@@ -46,9 +50,9 @@ export class ProposalCreateComponent implements OnInit {
   }
 
   preview!: string;
-  //todo -> fix error
-  addFiles(e: Event) {    
-    const file = (e.target as HTMLInputElement).files?.[0];    
+  //todo -> make it possible to upload files as well
+  addFiles(e: Event) {
+    const file = (e.target as HTMLInputElement).files?.[0];
     this.fileUploadGroup.patchValue({ image: file });
     this.fileUploadGroup.get('image')?.updateValueAndValidity();
     const reader = new FileReader();
@@ -56,6 +60,23 @@ export class ProposalCreateComponent implements OnInit {
       this.preview = reader.result as string;
     };
 
-    reader.readAsDataURL(file as Blob);                  
+    reader.readAsDataURL(file as Blob);
+  }
+
+  onConfirm() {
+    if (this.contactInfoGroup.valid && this.projectDetailGroup) {
+      this.projectService.addProject(
+        1, //todo client id
+        this.contactInfoGroup.value.name,
+        this.contactInfoGroup.value.email,
+        this.contactInfoGroup.value.phone,
+        this.projectDetailGroup.value.title,
+        this.projectDetailGroup.value.description,
+        this.projectDetailGroup.value.targetProgram,
+        this.fileUploadGroup.value.file
+        //todo -> approved
+        //todo -> foreign key to student team
+      );
+    }
   }
 }
