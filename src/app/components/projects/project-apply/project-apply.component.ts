@@ -18,8 +18,13 @@ export class ProjectApplyComponent implements OnInit {
       firstCtrl: ['', Validators.required],
     });
     this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required],
+      file: ['', Validators.required],
     });
     this.isLinear = false;
+  }
+  
+  preview!:string
+  addFiles(e:any) {
+
   }
 }

@@ -32,16 +32,18 @@
     </mat-step>
     <mat-step [stepControl]="secondFormGroup">
       <form [formGroup]="secondFormGroup">
-        <ng-template matStepLabel>Fill out your address</ng-template>
-        <mat-form-field appearance="fill">
-          <mat-label>Address</mat-label>
+        <ng-template matStepLabel>Attachments</ng-template>
+        <mat-label>Choose File</mat-label>
           <input
-            matInput
-            formControlName="secondCtrl"
-            placeholder="Ex. 1 Main St, New York, NY"
-            required
+            type="file"
+            formControlName="file"
+            #fileLoader
+            (change)="addFiles($event)"
           />
-        </mat-form-field>
+          <button mat-button type="button" (click)="fileLoader.click()">
+            Upload
+          </button>
+          <img *ngIf="preview" height="100px" [src]="preview" alt="" />
         <div>
           <button mat-button matStepperPrevious>Back</button>
           <button mat-button matStepperNext>Next</button>
@@ -49,11 +51,11 @@
       </form>
     </mat-step>
     <mat-step>
-      <ng-template matStepLabel>Done</ng-template>
+      <ng-template matStepLabel>Summary</ng-template>
       <p>You are now done.</p>
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
+        <button mat-button (click)="stepper.reset()">Cancel</button>
+        <button mat-button>Confirm</button>
       </div>
     </mat-step>
   </mat-stepper>
