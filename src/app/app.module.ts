@@ -33,6 +33,7 @@ import { BeforeLoginComponent } from './components/main/before-login/before-logi
 import { AfterLoginComponent } from './components/main/after-login/after-login.component';
 import { AdminMainComponent } from './components/admin/admin-main/admin-main.component';
 import { FirebaseModule } from './firebase-module';
+import { ProjectApplyComponent } from './components/projects/project-apply/project-apply.component';
 
 
 @NgModule({
@@ -62,6 +63,7 @@ import { FirebaseModule } from './firebase-module';
     BeforeLoginComponent,
     AfterLoginComponent,
     AdminMainComponent,
+    ProjectApplyComponent,
   ],
   imports: [
     BrowserModule,

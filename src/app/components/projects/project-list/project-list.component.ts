@@ -16,4 +16,8 @@ export class ProjectListComponent implements OnInit {
     })
   }
 
+  onApplyClick(projectId:number) {
+    //todo -> apply to a project
+    console.log("apply", projectId)
+  }
 }

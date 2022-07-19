@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent implements OnInit {  
+export class HeaderComponent implements OnInit {
   navItems = [
     {
       path: '',
@@ -21,20 +21,19 @@ export class HeaderComponent implements OnInit {
       subItems: [
         { path: '/student-team/add', title: 'team' },
         { path: '/project/list', title: 'projects' },
-        { path: '/', title: 'upload document' },
       ],
     },
     {
       path: '/',
       title: 'faculty',
-      subItems: [{ path: '/', title: 'assigned project' }],
+      subItems: [{ path: '/project/list', title: 'assigned project' }],
     },
     {
       path: '/',
       title: 'coordinator',
       subItems: [
         { path: '/project/list', title: 'projects' },
-        { path: '/', title: 'student teams' },
+        { path: '/student-team/list', title: 'student teams' },
         { path: '/', title: 'school term' },
       ],
     },
@@ -61,8 +60,8 @@ export class HeaderComponent implements OnInit {
     this.displayAuthToolbar = !this.displayAuthToolbar;
   }
 
-  toggleClicked:boolean = false
+  toggleClicked: boolean = false;
   onToggleClick() {
-    this.toggleClicked = !this.toggleClicked
+    this.toggleClicked = !this.toggleClicked;
   }
 }

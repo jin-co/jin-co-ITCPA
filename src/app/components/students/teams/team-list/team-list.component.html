@@ -1,1 +1,38 @@
-<p>team-list works!</p>
+<div class="container-fluid">
+  <!-- todo -> add filter -->
+  <div class="cards">
+    <mat-card *ngFor="let i of projects">
+      <h2 class="project-title">{{ i.projectTitle }}</h2>
+      <p>
+        {{ i.projectDescription }}
+      </p>
+      <div class="attachments"></div>
+      <div class="applied-teams"></div>
+      <div *ngIf="i.approved !== null"></div>
+
+      <div
+        *ngIf="i.approved === 0"
+        class="status status-approved"
+        style="background-color: #76ba99"
+      >
+        Approved
+      </div>
+      <div
+        *ngIf="i.approved == null"
+        class="status status-pending"
+        style="background-color: #ffb562; color: #000"
+      >
+        In process
+      </div>
+      <div
+        *ngIf="i.approved === 1"
+        class="status status-denied"
+        style="background-color: #f94c66"
+      >
+        Denied
+      </div>
+      
+      <i (click)="onApplyClick(i.projectId)" class="btn apply fas fa-hand-paper fa-3x"></i>
+    </mat-card>    
+  </div>
+</div>
