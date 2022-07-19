@@ -1,15 +1,17 @@
 {
   "name": "itcpa",
   "version": "0.0.0",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
+    "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "nodemon": "nodemon server.js",
-    "dev": "concurrently \"npm run nodemon\" \"ng serve -o\"",
-    "heroku-postbuild": "ng build --prod"
+    "dev": "concurrently \"npm run nodemon\" \"ng serve -o\""
   },
   "private": true,
   "dependencies": {
