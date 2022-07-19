@@ -10,6 +10,7 @@ export class ProjectApplyComponent implements OnInit {
   firstFormGroup!: FormGroup;
   secondFormGroup!: FormGroup;
   isLinear!: boolean;
+  
   constructor(private _formBuilder: FormBuilder) {}
 
   ngOnInit(): void {

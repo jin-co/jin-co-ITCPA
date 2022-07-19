@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   navItems = [
     {
-      path: '',
+      path: '/',
       title: 'client',
       subItems: [
         { path: '/proposal/create', title: 'proposal application' },

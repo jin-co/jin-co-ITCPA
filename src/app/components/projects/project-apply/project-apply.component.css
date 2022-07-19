@@ -1,0 +1,49 @@
+.container-fluid {
+  overflow: hidden;
+}
+
+.text-box {
+  height: 300px;
+  background: url("../../../../assets/images/backgrounds/bg8.jpg") center center/cover no-repeat;
+  margin: 50px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  position: relative;
+  color: #fff;
+  z-index: -1;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+.text-box h1 {
+  z-index: 1;
+}
+
+.text-box p {
+  z-index: 1;
+}
+
+.text-box::before {
+  content: "";
+  position: absolute;
+  top: -5%;
+  left: -10%;
+  height: 110%;
+  width: 120%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.mat-stepper-vertical {
+  position: relative;
+}
+
+.mat-stepper-vertical::before {
+  content: '';
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: url('../../../../assets/images/backgrounds/bg9.jpg') center center/cover no-repeat;
+}

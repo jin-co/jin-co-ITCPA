@@ -98,6 +98,10 @@ a {
   left: 30px !important;
 }
 
+.mat-horizontal-content-container {
+  min-height: 400px;
+}
+
 /* responsive styles */
 @media all and (max-width:996px) {
   .nav-menu-box {
@@ -170,6 +174,10 @@ a {
   .mat-stepper-horizontal::before {
     display: none;
   }
+
+  .mat-stepper-vertical::before {
+    display: none;
+  }
 }
 
 @media all and (max-width: 475px) {
@@ -178,4 +186,3 @@ a {
   }
 }
 /* responsive styles */
-
