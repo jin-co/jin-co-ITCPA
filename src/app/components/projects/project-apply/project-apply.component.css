@@ -35,15 +35,27 @@
 }
 
 .mat-stepper-vertical {
+  min-height: 400px;
+  width: 50%;  
   position: relative;
 }
 
 .mat-stepper-vertical::before {
   content: '';
   height: 100%;
-  width: 50%;
+  width: 100%;
   position: absolute;
   top: 0;
-  right: 0;
-  background: url('../../../../assets/images/backgrounds/bg9.jpg') center center/cover no-repeat;
+  right: -100%;
+  background: url('../../../../assets/images/backgrounds/bg9.jpg') center center/cover no-repeat;    
+}
+
+.file-upload-box {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.summary-box {
+  
 }

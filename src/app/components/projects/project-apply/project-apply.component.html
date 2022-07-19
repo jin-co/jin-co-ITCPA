@@ -19,10 +19,10 @@
           <input
             matInput
             placeholder="Team Name"
-            readonly            
+            readonly
             formControlName="firstCtrl"
             required
-            ngModel="aaa"             
+            ngModel="aaa"
           />
         </mat-form-field>
         <div>
@@ -34,6 +34,7 @@
       <form [formGroup]="secondFormGroup">
         <ng-template matStepLabel>Attachments</ng-template>
         <mat-label>Choose File</mat-label>
+        <div class="file-upload-box">
           <input
             type="file"
             formControlName="file"
@@ -44,6 +45,7 @@
             Upload
           </button>
           <img *ngIf="preview" height="100px" [src]="preview" alt="" />
+        </div>
         <div>
           <button mat-button matStepperPrevious>Back</button>
           <button mat-button matStepperNext>Next</button>
@@ -52,7 +54,20 @@
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Summary</ng-template>
-      <p>You are now done.</p>
+      <mat-card class="summary-box">
+        <ul>
+          <h3>Contact Information</h3>
+          <li>{{ 'test' }}</li>
+          <li>{{ 'test' }}</li>
+          <li>{{ 'test' }}</li>
+        </ul>
+        <mat-divider></mat-divider>
+        <ul>
+          <h3>Project Details</h3>
+          <li>{{ 'test' }}</li>
+          <li>{{ 'test' }}</li>
+        </ul>
+      </mat-card>
       <div>
         <button mat-button (click)="stepper.reset()">Cancel</button>
         <button mat-button>Confirm</button>
