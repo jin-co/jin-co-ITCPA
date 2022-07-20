@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "itcpa": {
+    "ssibal": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/itcap",
+            "outputPath": "dist/ssibal",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -75,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "itcap:build:production"
+              "browserTarget": "ssibal:build:production"
             },
             "development": {
-              "browserTarget": "itcap:build:development"
+              "browserTarget": "ssibal:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -86,7 +86,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "itcap:build"
+            "browserTarget": "ssibal:build"
           }
         },
         "test": {
@@ -111,7 +111,7 @@
           "options": {
             "prerender": false,
             "ssr": false,
-            "browserTarget": "itcap:build:production",
+            "browserTarget": "ssibal:build:production",
             "firebaseProject": "itcpa-2a61f",
             "firebaseHostingSite": "itcpa-2a61f"
           }
@@ -119,5 +119,5 @@
       }
     }
   },
-  "defaultProject": "itcap"
+  "defaultProject": "ssibal"
 }

@@ -6,7 +6,7 @@
   "targets": {
     "itcpa-2a61f": {
       "hosting": {
-        "itcpa": [
+        "ssibal": [
           "itcpa-2a61f"
         ]
       }

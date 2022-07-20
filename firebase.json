@@ -1,7 +1,7 @@
 {
   "hosting": {
-    "target": "itcpa",
-    "public": "dist/itcpa",
+    "target": "ssibal",
+    "public": "dist/ssibal",
     "ignore": [
       "**/.*"
     ],
