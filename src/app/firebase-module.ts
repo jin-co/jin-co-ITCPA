@@ -1,10 +1,8 @@
 import { NgModule } from '@angular/core';
-import * as i0 from '@angular/core';
-import * as i1 from '@angular/fire/compat';
 // import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 
-import { environment } from '../environments/environment';
-import { AngularFireModule } from '@angular/fire/compat';
+// import { environment } from '../environments/environment';
+// import { AngularFireModule } from '@angular/fire/compat';
 // import { AuthModule } from '@angular/fire/auth';
 
 // import { FirebaseApp } from '@angular/fire/compat/firebase.app';
@@ -15,14 +13,14 @@ import { AngularFireModule } from '@angular/fire/compat';
 
 @NgModule({
   imports: [
-    AngularFireModule.initializeApp(environment.firebase),    
+    // AngularFireModule.initializeApp(environment.firebase),    
     // provideAuth(() => getAuth()),
     // provideDatabase(() => getDatabase()),
     // provideFirestore(() => getFirestore()),
     // provideMessaging(() => getMessaging()),
   ],
   exports: [
-    AngularFireModule,        
+    // AngularFireModule,        
     // AngularFireAuthModule,
     // AngularFireDatabaseModule,
     // AngularFirestoreModule,

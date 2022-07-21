@@ -36,6 +36,7 @@ import { FirebaseModule } from './firebase-module';
 import { ProjectApplyComponent } from './components/projects/project-apply/project-apply.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,7 +74,7 @@ import { ProjectApplyComponent } from './components/projects/project-apply/proje
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    FirebaseModule
+    FirebaseModule,    
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
